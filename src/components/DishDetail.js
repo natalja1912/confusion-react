@@ -4,12 +4,13 @@ import {
     CardTitle, Breadcrumb, BreadcrumbItem
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import SubmitComment from './SubmitCommentModal';
 
 
 function RenderDish({ dish }) {
     return (
         <Card className="card-description">
-            <CardImg width="80%" top className="card-desc-picture" src={dish.image} alt={dish.name} />
+            <CardImg top className="card-desc-picture" src={dish.image} alt={dish.name} />
             <CardBody>
                 <CardTitle tag="h5">{dish.name}</CardTitle>
                 <CardText>{dish.description}</CardText>
@@ -43,13 +44,14 @@ const DishDetail = (props) => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-12 col-md-5 m-1">
+                <div className="col-12 col-md-5 m-2">
                     <RenderDish dish={props.dish} />
                 </div>
-                <div className="col-12 col-md-5 m-1">
+                <div className="col-12 col-md-5 m-2">
                     <ul className="comments-list">
                         <RenderComments comments={props.comments} />
                     </ul>
+                    <SubmitComment></SubmitComment>
                 </div>
             </div>
         </div>

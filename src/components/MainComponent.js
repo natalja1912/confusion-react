@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import DishDetail from './DishDetail';
@@ -52,4 +53,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default withRouter(Main);

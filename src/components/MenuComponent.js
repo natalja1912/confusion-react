@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Card, CardImg, CardImgOverlay,
-  CardTitle, Breadcrumb, BreadcrumbItem
+  CardTitle, Breadcrumb, BreadcrumbItem, 
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function RenderMenuItem({ dish, onClick }) {
     <Card
       onClick={() => onClick(dish.id)}>
       <Link to={`/menu/${dish.id}`} >
-        <CardImg className="card-picture" width="100%" src={dish.image} alt={dish.name} />
+        <CardImg className="card-picture-menu" src={dish.image} alt={dish.name} />
         <CardImgOverlay>
           <CardTitle className="card-title">{dish.name}</CardTitle>
         </CardImgOverlay>
