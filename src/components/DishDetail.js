@@ -51,7 +51,7 @@ const DishDetail = (props) => {
                     <ul className="comments-list">
                         <RenderComments comments={props.comments} />
                     </ul>
-                    <SubmitComment></SubmitComment>
+                    <SubmitComment dishId={props.dish.id} addComment={props.addComment}></SubmitComment>
                 </div>
             </div>
         </div>

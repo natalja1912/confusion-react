@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Row, Col, Button, Modal, ModalHeader, ModalBody, Label, Container } from 'reactstrap';
 import { LocalForm, Control, Errors } from 'react-redux-form';
 
-const SubmitComment = () => {
+const SubmitComment = ({ dishId, addComment }) => {
     const [modal, setModal] = useState(false);
+    console.log(addComment);
 
     const toggle = () => setModal(!modal);
 
@@ -13,8 +14,7 @@ const SubmitComment = () => {
 
     function handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
-        // event.preventDefault();
+        addComment(dishId, values.rating, values.userName, values.userComment);
     };
 
     return (
@@ -30,7 +30,7 @@ const SubmitComment = () => {
                             <Container>
                                 <Row className="form-group">
                                     <Label htmlFor="userName" >Your name</Label>
-                                    <Control.text className="form-control" model=".username" name="userName" id="userName" placeholder="Your name" validators={{
+                                    <Control.text className="form-control" model=".userName" name="userName" id="userName" placeholder="Your name" validators={{
                                         required, minLength: minLength(3), maxLength: maxLength(15)
                                     }} />
                                     <Errors
@@ -61,11 +61,13 @@ const SubmitComment = () => {
                                         className="form-control" />
                                 </Row>
                             </Container>
+                            <Row>
+                                <Col sm={2}>
+                                    <Button className="mb-3" type="submit" color="primary" onClick={toggle}>Submit</Button>
+                                </Col>
+                            </Row>
                         </LocalForm>
                     </ModalBody>
-                    <Col sm={2}>
-                        <Button className="mb-3" type="submit" color="primary" onClick={toggle}>Submit</Button>
-                    </Col>
                 </Modal>
             </Row>
         </div>

@@ -1,5 +1,5 @@
 
-export const MENU_DISHES_LIST = [
+export const DISHES = [
    {
       id: 0,
       name: 'Uthappizza',

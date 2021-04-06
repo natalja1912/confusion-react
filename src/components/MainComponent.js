@@ -4,36 +4,49 @@ import { connect } from 'react-redux';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import DishDetail from './DishDetail';
-import { MENU_DISHES_LIST, COMMENTS, PROMOTIONS, LEADERS } from '../utils/constants';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
+import { addComment } from '../redux/ActionCreators';
 
-function Main() {
+const mapStateToProps = state => {
+    return {
+        dishes: state.dishes,
+        comments: state.comments,
+        promotions: state.promotions,
+        leaders: state.leaders
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment))
+});
+
+function Main(props) {
     const [selectedDish, setSelectedDish] = useState('');
 
     const HomePage = () => {
         return (
             <Home
-                dish={MENU_DISHES_LIST.filter((dish) => dish.id === parseInt(selectedDish))[0]}
-                promotion={PROMOTIONS.filter((promo) => promo.featured)[0]}
-                leader={LEADERS.filter((leader) => leader.featured)[0]}
+                dish={props.dishes.filter((dish) => dish.id === parseInt(selectedDish))[0]}
+                promotion={props.promotions.filter((promo) => promo.featured)[0]}
+                leader={props.leaders.filter((leader) => leader.featured)[0]}
             />
         );
     }
 
     const AboutPage = () => {
         return (
-            <About leaders={LEADERS}
+            <About leaders={props.leaders}
             />
         );
     }
 
     const DishWithId = ({ match }) => {
         return (
-            <DishDetail dish={MENU_DISHES_LIST.filter((dish) => dish.id === parseInt(match.params.dishId, 10))[0]}
-                comments={COMMENTS.filter((comment) => comment.dishId === parseInt(match.params.dishId, 10))} />
+            <DishDetail addComment={props.addComment} dish={props.dishes.filter((dish) => dish.id === parseInt(match.params.dishId, 10))[0]}
+                comments={props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId, 10))} />
         );
     };
 
@@ -43,7 +56,7 @@ function Main() {
             <Switch>
                 <Route path='/home' component={HomePage} />
                 <Route path='/aboutus' component={AboutPage} />
-                <Route exact path='/menu' component={() => <Menu dishes={MENU_DISHES_LIST} onClick={(dishId) => setSelectedDish(dishId)} />} />
+                <Route exact path='/menu' component={() => <Menu dishes={props.dishes} onClick={(dishId) => setSelectedDish(dishId)} />} />
                 <Route path='/contactus' component={Contact} />
                 <Route path='/menu/:dishId' component={DishWithId} />
                 <Redirect to="/home" />
@@ -53,4 +66,4 @@ function Main() {
     );
 }
 
-export default withRouter(Main);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
