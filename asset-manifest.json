@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/confusion-react/static/css/main.a40206c4.chunk.css",
-    "main.js": "/confusion-react/static/js/main.d107f701.chunk.js",
-    "main.js.map": "/confusion-react/static/js/main.d107f701.chunk.js.map",
+    "main.js": "/confusion-react/static/js/main.fbb8488d.chunk.js",
+    "main.js.map": "/confusion-react/static/js/main.fbb8488d.chunk.js.map",
     "runtime-main.js": "/confusion-react/static/js/runtime-main.fe247b33.js",
     "runtime-main.js.map": "/confusion-react/static/js/runtime-main.fe247b33.js.map",
     "static/css/2.1f02b3a6.chunk.css": "/confusion-react/static/css/2.1f02b3a6.chunk.css",
-    "static/js/2.9d3c7242.chunk.js": "/confusion-react/static/js/2.9d3c7242.chunk.js",
-    "static/js/2.9d3c7242.chunk.js.map": "/confusion-react/static/js/2.9d3c7242.chunk.js.map",
+    "static/js/2.0418c8fb.chunk.js": "/confusion-react/static/js/2.0418c8fb.chunk.js",
+    "static/js/2.0418c8fb.chunk.js.map": "/confusion-react/static/js/2.0418c8fb.chunk.js.map",
     "index.html": "/confusion-react/index.html",
     "static/css/2.1f02b3a6.chunk.css.map": "/confusion-react/static/css/2.1f02b3a6.chunk.css.map",
     "static/css/main.a40206c4.chunk.css.map": "/confusion-react/static/css/main.a40206c4.chunk.css.map",
-    "static/js/2.9d3c7242.chunk.js.LICENSE.txt": "/confusion-react/static/js/2.9d3c7242.chunk.js.LICENSE.txt",
+    "static/js/2.0418c8fb.chunk.js.LICENSE.txt": "/confusion-react/static/js/2.0418c8fb.chunk.js.LICENSE.txt",
     "static/media/font-awesome.css": "/confusion-react/static/media/fontawesome-webfont.f691f37e.woff",
     "static/media/logo.23118273.png": "/confusion-react/static/media/logo.23118273.png"
   },
   "entrypoints": [
     "static/js/runtime-main.fe247b33.js",
     "static/css/2.1f02b3a6.chunk.css",
-    "static/js/2.9d3c7242.chunk.js",
+    "static/js/2.0418c8fb.chunk.js",
     "static/css/main.a40206c4.chunk.css",
-    "static/js/main.d107f701.chunk.js"
+    "static/js/main.fbb8488d.chunk.js"
   ]
 }
