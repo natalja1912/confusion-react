@@ -83,3 +83,7 @@ address{
     height: 150px;
     object-fit: cover;
 }
+
+.spinner{
+    text-align: center;
+}

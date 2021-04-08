@@ -11,6 +11,7 @@
  * Reactstrap
  * Font Awesome icons
  * Redux
+ * Redux Thunk
  * Redux forms
 
 ## Ссылка на сайт github pages 
