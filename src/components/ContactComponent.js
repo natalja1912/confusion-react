@@ -2,12 +2,13 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Row, Col, Button, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Control, Form, Errors, actions } from 'react-redux-form';
 
 function Contact(props) {
     function handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
+        props.resetFeedbackForm();
         // event.preventDefault();
     };
 
@@ -57,7 +58,7 @@ function Contact(props) {
             </div>
             <div className="row row-content">
                 <h2 className="col-12">Send Us Your Feedback</h2>
-                <LocalForm className="col-12 mt-4" onSubmit={(values) => handleSubmit(values)}>
+                <Form model="feedback" className="col-12 mt-4" onSubmit={(values) => handleSubmit(values)}>
                     <Row className="form-group">
                         <Label htmlFor="firstname" sm={2}>First name</Label>
                         <Col sm={5}>
@@ -159,7 +160,7 @@ function Contact(props) {
                             <Button className="mt-3" color="primary">Send Feedback</Button>
                         </Col>
                     </Row>
-                </LocalForm>
+                </Form>
 
             </div>
         </div>
