@@ -12,7 +12,7 @@
  * Font Awesome icons
  * Redux
  * Redux Thunk
- * Redux forms
+ * Redux Forms
 
 ## Ссылка на сайт github pages 
 https://natalja1912.github.io/confusion-react/
